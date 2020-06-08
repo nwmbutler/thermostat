@@ -1,3 +1,7 @@
 class Airport {
+
+    hanger(){
+      return [];
+    };
   
-}
+};
