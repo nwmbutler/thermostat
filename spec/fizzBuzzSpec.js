@@ -19,7 +19,6 @@ describe("FizzBuzz", function(){
     it ("should return the number when not divisable by 3 or 5", function(){
         expect(fizzBuzz(7)).toEqual(7)
 
-
     });
 
 });
