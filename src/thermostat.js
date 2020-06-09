@@ -5,6 +5,7 @@ class Thermostat {
       this.temperature = 20;
       this.MINTEMP = 10;
       this.POWERSAVE = 25;
+    //   this.MAXTEMP = 32;
     
     };
   
@@ -17,6 +18,10 @@ class Thermostat {
        return  this.MINTEMP === this.temperature
     };
 
+    // powerSaveOff(){
+    //     return this.MAXTEMP === this.temperature
+    // }
+
     powerSaveOn(){
         return this.temperature === this.POWERSAVE
     };
@@ -26,6 +31,11 @@ class Thermostat {
             return;
         }
       this.temperature += 1;
+
+    //   if (this.powerSaveOff()) {
+    //       return;
+    //   }
+    //   this.temperature += 1;
     };
 
     down(){
