@@ -4,6 +4,7 @@ class Thermostat {
     constructor() {
       this.temperature = 20;
       this.MINTEMP = 10;
+      this.POWERSAVE = 25;
     
     };
   
@@ -15,8 +16,15 @@ class Thermostat {
     minTemp(){
        return  this.MINTEMP === this.temperature
     };
+
+    powerSaveOn(){
+        return this.temperature === this.POWERSAVE
+    };
   
     up(){
+        if (this.powerSaveOn()) {
+            return;
+        }
       this.temperature += 1;
     };
 

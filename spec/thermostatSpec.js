@@ -18,10 +18,17 @@ describe("Thermostat", function(){
         expect(thermostat.currentTemp()).toEqual(19);
     });
     it("has a minimum temp of 10 degrees", function(){
-        for( var degree = 1; degree < 11; degree+= 1){
+        for( var degree = 0; degree < 10; degree+= 1){
         thermostat.down();
         }
         expect(thermostat.currentTemp()).toEqual(10);
+    });
+
+    it("has a power saving mode, whilst true max 25 degrees", function(){
+        for( var degree = 0; degree < 6; degree+=1){
+            thermostat.up();
+        }
+        expect(thermostat.currentTemp()).toEqual(25);
     });
 
 });
