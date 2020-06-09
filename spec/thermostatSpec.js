@@ -23,4 +23,5 @@ describe("Thermostat", function(){
         }
         expect(thermostat.currentTemp()).toEqual(10);
     });
+
 });
