@@ -4,6 +4,7 @@ class Thermostat {
     constructor() {
       this.temperature = 20;
       this.MINTEMP = 10;
+      this.MEDENERGYUSE = 18
       this.MAX_LIMIT_PSN_ON = 25;
       this.MAX_LIMIT_PSN_OFF = 32;
       this.powerSaveMode = true;
@@ -58,8 +59,12 @@ class Thermostat {
     };
 
     currentUsage(){
-      if (this.temperature <= 18);
-      return "low-usage"
-    };
-
+      if (this.temperature < this.MEDENERGYUSE) {
+      return "low-usage";
+    }
+      if (this.temperature >= this.MEDENERGYUSE && this.temperature <= this.MAX_LIMIT_PSN_ON) {
+      return "med-usage";
+    }
+    return "high-usage"
+  };
   };

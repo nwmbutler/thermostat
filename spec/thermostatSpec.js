@@ -38,14 +38,30 @@ describe("Thermostat", function(){
         }
         expect(thermostat.currentTemp()).toEqual(32);
     });
+
     it("resets the temperature to 20 when reset", function(){
       thermostat.up();
       thermostat.reset();
       expect(thermostat.currentTemp()).toEqual(20);
     });
 
-    it("returns low-usage if thermostat is < 18", function(){
-      expect(thermostat.currentUsage()).toEqual("low-usage")
+    it("returns low-usage if thermostat is <= 18", function(){
+      for( var degree = 0; degree < 3; degree+= 1){
+      thermostat.down();
+       }
+      expect(thermostat.currentUsage()).toEqual("low-usage");
     });
 
+    it("returns med-usage if thermostat is between 18 and 25", function(){
+      expect(thermostat.currentUsage()).toEqual("med-usage")
+    });
+
+    it("returns high-usage if thermostat is > 25", function(){
+      thermostat.switchPowerSaveOff();
+      for( var degree = 20; degree < 30; degree+=1){
+          thermostat.up();
+      }
+      expect(thermostat.currentUsage()).toEqual("high-usage")
+    });
+    
 });
