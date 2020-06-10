@@ -4,8 +4,8 @@ class Thermostat {
     constructor() {
       this.temperature = 20;
       this.MINTEMP = 10;
-      this.POWERSAVE = 25;
-      this.MAXTEMP = 32;
+      this.MAX_LIMIT_PSN_ON = 25;
+      this.MAX_LIMIT_PSN_OFF = 32;
       this.powerSaveMode = true;
 
     };
@@ -19,24 +19,31 @@ class Thermostat {
        return  this.MINTEMP === this.temperature
     };
 
-    powerSaveOff(){
-        this.powerSaveMode = false
-    }
+    switchPowerSaveOff(){
+        this.powerSaveMode = false;
+    };
 
-    powerSaveOn(){
-        this.powerSaveMode = true
+    switchPowerSaveOn(){
+        this.powerSaveMode = true;
+    };
+
+    isPowerSaverOn(){
+      return this.powerSaveMode === true;
+    };
+
+
+    isMaxTemp() {
+      if (this.isPowerSaverOn() === false) {
+         return this.temperature === this.MAX_LIMIT_PSN_OFF;
+       }
+         return this.temperature === this.MAX_LIMIT_PSN_ON;
     };
 
     up(){
-        if (this.powerSaveOn()) {
+        if (this.isMaxTemp()) {
             return;
         }
       this.temperature += 1;
-
-    //   if (this.powerSaveOff()) {
-    //       return;
-    //   }
-    //   this.temperature += 1;
     };
 
     down(){
