@@ -44,4 +44,8 @@ describe("Thermostat", function(){
       expect(thermostat.currentTemp()).toEqual(20);
     });
 
+    it("returns low-usage if thermostat is < 18", function(){
+      expect(thermostat.currentUsage()).toEqual("low-usage")
+    });
+
 });

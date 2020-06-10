@@ -56,4 +56,10 @@ class Thermostat {
     reset(){
       this.temperature = 20;
     };
+
+    currentUsage(){
+      if (this.temperature <= 18);
+      return "low-usage"
+    };
+
   };
