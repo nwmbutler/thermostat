@@ -33,10 +33,10 @@ describe("Thermostat", function(){
 
     it("has a power saving mode, whilst false max 32 degrees", function(){
         for( var degree = 20; degree < 32; degree+=1){
+            thermostat.powerSaveOff();
             thermostat.up();
         }
         expect(thermostat.currentTemp()).toEqual(32);
     });
-    
 
 });
