@@ -32,11 +32,16 @@ describe("Thermostat", function(){
     });
 
     it("has a power saving mode, whilst false max 32 degrees", function(){
-            thermostat.switchPowerSaveOff();
+        thermostat.switchPowerSaveOff();
         for( var degree = 20; degree < 32; degree+=1){
             thermostat.up();
         }
         expect(thermostat.currentTemp()).toEqual(32);
+    });
+    it("resets the temperature to 20 when reset", function(){
+      thermostat.up();
+      thermostat.reset();
+      expect(thermostat.currentTemp()).toEqual(20);
     });
 
 });
