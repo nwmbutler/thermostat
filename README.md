@@ -38,3 +38,8 @@ You can ask about the thermostat's current energy usage: < 18 is low-usage, < 25
 ```
 index.HTML added with nice light blue background and buttons centralised and spaced.
 ```
+<br>
+<p align="center">
+<img src="images/pg1.png" width="75%">
+<br><br>
+  Thermo page.
