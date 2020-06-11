@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Thermostat</title>
+  </head>
+<body style="background-color:#e6ffff;">
+<style>
+ h1 {text-align: center;}
+ form {text-align: center;}
+ body {text-align: center;}
+ div.b {
+   line-height: 30px;
+ }
+ img {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+ }
+ </style>
+    <title>Thermostat</title>
+  </head>
+  <body>
+    <section>
+      <h1 id="temperature"></h1>
+      <p>
+        <button id="temperature-up">+</button>
+        <div>
+        <button id="temperature-down">-</button>
+        <div class="b">
+        <button id="temperature-reset">reset</button>
+        <div class="b">
+        power saving mode is <span id="power-saving-status">on</span>
+        <div>
+        <button id="powersaving-on">Powersave on</button>
+        <button id="powersaving-off">Powersave off</button>
+      </p>
+    </section>
+    <script src="src/thermostat.js"></script>
+  </body>
+</html>
