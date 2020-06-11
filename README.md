@@ -43,3 +43,12 @@ index.HTML added with nice light blue background and buttons centralised and spa
 <img src="images/pg1.png" width="75%">
 <br><br>
   Thermo page.
+
+```
+Jquery deployed and style moved to css file in the public folder
+```
+<br>
+<p align="center">
+<img src="images/pg2.png" width="75%">
+<br><br>
+  Thermo page updated with Jquery and css.
