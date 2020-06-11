@@ -27,6 +27,11 @@
   <body>
     <section>
       <h1 id="temperature"></h1>
+      <span id=city>London</span>: <span class="weather"></span>C
+      <div>
+      <input type=text id="cityChoice">
+      <button id="newCity">Submit</button>
+    </div>
       <p>
         <div>
         <span class="visual">
@@ -43,10 +48,10 @@
         <button id="powersaving-on">Powersave on</button>
         <button id="powersaving-off">Powersave off</button>
         <div class="b">
-        Energy usage is <span id="energy-usage-status">on</span>
+        Energy usage is <span class="dot" id="energy-usage-status"></span>
         <div>
       </p>
-    </section>\<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </section><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="src/thermostat.js"></script>
     <script src="jquery.js"></script>
   </body>
