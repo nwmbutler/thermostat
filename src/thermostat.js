@@ -32,7 +32,6 @@ class Thermostat {
       return this.powerSaveMode === true;
     };
 
-
     isMaxTemp() {
       if (this.isPowerSaverOn() === false) {
          return this.temperature === this.MAX_LIMIT_PSN_OFF;
