@@ -1,19 +1,19 @@
 require 'sinatra/base'
 require 'json'
-require_relative '/lib/thermostat'
+require_relative './lib/thermostat'
 
-class Thermostat < Sinatra::Base 
+class Thermostat < Sinatra::Base
 
     get '/' do
-        File.read('index.html')
+        File.read('./index.html')
     end
 
-    get '/temperature' do 
+    get '/temperature' do
         thermostat = Thermo.instance
         { temperature: thermostat.temperature }.to_json
     end
 
-    post '/temperature' do 
+    post '/temperature' do
         thermostat = Thermo.instance
         thermostat.update(params[:temperature])
         { status: 200 }.to_json

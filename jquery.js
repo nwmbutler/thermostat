@@ -5,7 +5,7 @@ thermostat = new Thermostat();
   $('.visual').text(thermostat.currentTemp());
   dotColour();
   $.get('http://api.openweathermap.org/data/2.5/weather?q=London&appid=9664cc34416cacaeacba52570a229637&units=metric', function(data) {
-    var temp = data.main.temp
+    var temp = parseInt($(data.main.temp).text())
     $('.weather').text(temp);
   });
 

@@ -11,10 +11,13 @@ class Thermostat {
 
     };
 
-    currentTemp(){
-        return this.temperature
-
-    };
+    Thermostat.prototype = {
+  currentTemp: function(callback) {
+    $.get('/temperature', function(res) {
+      var data = JSON.parse(res)
+      callback(data);
+    });
+  },
 
     minTemp(){
        return  this.MINTEMP === this.temperature
